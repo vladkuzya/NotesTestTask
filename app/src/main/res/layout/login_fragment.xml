@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="fragment"
+            type="com.example.notestesttask.screens.login.LoginFragment" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        tools:context=".screens.login.LoginFragment">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="20dp"
+            android:text="@string/login"
+            android:textSize="32sp" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:hint="@string/enter_email"
+            android:inputType="text"
+            android:singleLine="true" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:hint="@string/enter_password"
+            android:inputType="text"
+            android:singleLine="true"/>
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/et_confirm_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:hint="@string/confirm_password"
+            android:visibility="gone"
+            android:inputType="text"
+            android:singleLine="true"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_dont_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{() -> fragment.showRegistrationField()}"
+            android:text="@string/dont_have_account"
+            android:textColor="@color/blue" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_have_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginEnd="32dp"
+            android:onClick="@{() -> fragment.showLoginField()}"
+            android:text="@string/have_account_login"
+            android:textColor="@color/blue"
+            android:visibility="gone" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="32dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_blue_selector"
+            android:enabled="@{(etConfirmPassword.getVisibility() == View.GONE &amp;&amp;  etEmail.text.length() > 0 &amp;&amp; etPassword.text.length() > 0) || (etConfirmPassword.getVisibility() == View.VISIBLE &amp;&amp;  etEmail.text.length() > 0 &amp;&amp; etPassword.text.length() > 0 &amp;&amp; etConfirmPassword.text.length() > 0)}"
+            android:onClick="@{() -> fragment.onLoginClick()}"
+            android:text="@string/enter"
+            android:textColor="@color/white" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:visibility="invisible" />
+
+    </LinearLayout>
+</layout>
