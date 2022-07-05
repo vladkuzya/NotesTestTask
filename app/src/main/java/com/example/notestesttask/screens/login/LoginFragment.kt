@@ -5,16 +5,16 @@ import android.view.View
 import android.widget.Toast
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import com.example.notestesttask.R
 import com.example.notestesttask.base.BaseFragment
+import com.example.notestesttask.base.NotesApp
+import com.example.notestesttask.data.SharedPreferencesManager
 import com.example.notestesttask.databinding.LoginFragmentBinding
 import com.example.notestesttask.util.KeyboardUtil
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : BaseFragment() {
-    companion object {
-        fun newInstance() = LoginFragment()
-    }
 
     private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private lateinit var binding: LoginFragmentBinding
@@ -49,13 +49,16 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun goToNotesListFragment() {
-
+        NavHostFragment
+            .findNavController(this)
+            .navigate(LoginFragmentDirections.actionLoginFragmentToNotesFragment())
     }
 
     private fun initUi() {
         val currentUser = auth.currentUser
         if (currentUser != null) {
-            showLoginField();
+            NotesApp.sharedPreferencesManager.saveUserEmail(currentUser.email)
+            goToNotesListFragment()
         } else {
             showRegistrationField()
         }

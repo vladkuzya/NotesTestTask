@@ -16,4 +16,7 @@
     <string name="error_invalid_confirm_password">Паролі не збігаються</string>
     <string name="error_short_password">Пароль повинен складатися не менше ніж з 6 символів</string>
     <string name="error_email_is_already_in_use">Адреса електронної пошти вже використовується іншим обліковим записом</string>
+    <string name="add_notes">+ Додати замітку</string>
+    <string name="no_notes">Немає нотаток</string>
+    <string name="note_deleted">Замітка видалена</string>
 </resources>
