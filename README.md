@@ -11,7 +11,7 @@ A simple notepad for taking notes. Made for the Android mobile environment in Ko
 ## Technologies
 Project is created with:
 * Kotlin
-* Firebase (Firestore)
+* Firebase (Firestore, Authentication)
 * MVVM
 * Glide
 
