@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="login">Login</string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_password">Enter password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="dont_have_account"><u>I don\'t have an account</u></string>
+    <string name="have_account_login"><u>I have an account. Login</u></string>
+    <string name="enter">Log in</string>
+    <string name="registration">Registration</string>
+    <string name="error_invalid_email">The email address is not in the correct format</string>
+    <string name="unknown_error">An error occurred: %s</string>
+    <string name="error_invalid_email_or_password">Incorrect e-mail or password</string>
+    <string name="register">Sign up</string>
+    <string name="error_invalid_confirm_password">Passwords do not match</string>
+    <string name="error_short_password">The password must consist of at least 6 characters</string>
+    <string name="error_email_is_already_in_use">The email address is already in use by another account</string>
+    <string name="add_notes">+ Add a note</string>
+    <string name="no_notes">There are no notes</string>
+    <string name="note_deleted">Note deleted</string>
+    <string name="save_note">Save</string>
+    <string name="choose_image">Choose an image</string>
+    <string name="note_added">Note added</string>
+</resources>

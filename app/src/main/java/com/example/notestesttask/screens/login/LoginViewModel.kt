@@ -3,6 +3,7 @@ package com.example.notestesttask.screens.login
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.notestesttask.base.NotesApp
 import com.example.notestesttask.util.Constants
 import com.google.android.gms.tasks.Task
 import com.google.firebase.auth.AuthResult
@@ -53,6 +54,8 @@ class LoginViewModel : ViewModel() {
 
     private fun processResult(result: Task<AuthResult>) {
         if (result.isSuccessful) {
+            val user = result.result.user
+            NotesApp.sharedPreferencesManager.saveUserEmail(user?.email)
             loginData.value = result.result.user
         } else {
             errorLogin.value = result.exception?.message

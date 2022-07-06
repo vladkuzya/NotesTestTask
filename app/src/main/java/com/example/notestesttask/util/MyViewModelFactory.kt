@@ -3,6 +3,7 @@ package com.example.notestesttask.util
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.notestesttask.data.api.NotesApi
+import com.example.notestesttask.screens.add_note.AddNoteViewModel
 import com.example.notestesttask.screens.notes.NotesViewModel
 
 class MyViewModelFactory constructor(private val notesApi: NotesApi) : ViewModelProvider.Factory {
@@ -11,6 +12,9 @@ class MyViewModelFactory constructor(private val notesApi: NotesApi) : ViewModel
         return when {
             modelClass.isAssignableFrom(NotesViewModel::class.java) -> {
                 NotesViewModel(notesApi) as T
+            }
+            modelClass.isAssignableFrom(AddNoteViewModel::class.java) -> {
+                AddNoteViewModel(notesApi) as T
             }
             else -> {
                 throw IllegalArgumentException("ViewModel Not Found")

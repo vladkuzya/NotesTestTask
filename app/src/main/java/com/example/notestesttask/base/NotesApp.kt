@@ -7,8 +7,6 @@ class NotesApp : Application() {
 
     companion object {
         lateinit var sharedPreferencesManager: SharedPreferencesManager
-
-        fun getSharedPreferences(): SharedPreferencesManager = sharedPreferencesManager
     }
 
     override fun onCreate() {

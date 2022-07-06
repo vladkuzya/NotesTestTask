@@ -2,7 +2,6 @@ package com.example.notestesttask.data
 
 import android.content.Context
 import android.content.SharedPreferences
-import com.google.protobuf.Empty
 
 class SharedPreferencesManager constructor(context: Context) {
     private val empty = ""

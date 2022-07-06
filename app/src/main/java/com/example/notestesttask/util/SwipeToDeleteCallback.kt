@@ -1,18 +1,15 @@
 package com.example.notestesttask.util
 
-import android.content.Context
 import android.graphics.*
 import android.graphics.drawable.ColorDrawable
-import androidx.core.content.ContextCompat
+import android.graphics.drawable.Drawable
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
-import com.example.notestesttask.R
 
 abstract class SwipeToDeleteCallback(
-    context: Context
+    private val deleteIcon: Drawable?
 ) : ItemTouchHelper.SimpleCallback(0, ItemTouchHelper.LEFT) {
 
-    private val deleteIcon = ContextCompat.getDrawable(context, R.drawable.ic_baseline_delete_forever)
     private val intrinsicWidth = deleteIcon!!.intrinsicWidth
     private val intrinsicHeight = deleteIcon!!.intrinsicHeight
     private val background = ColorDrawable()
@@ -78,16 +75,14 @@ abstract class SwipeToDeleteCallback(
 
         // Calculate position of delete icon
         val deleteIconTop = itemView.top + (itemHeight - intrinsicHeight) / 2
-        val deleteIconMargin = (itemHeight - intrinsicHeight) / 2
-        val deleteIconLeft = itemView.right - deleteIconMargin - intrinsicWidth
-        val deleteIconRight = itemView.right - deleteIconMargin
+        val deleteIconLeft = itemView.right - intrinsicWidth * 2
+        val deleteIconRight = itemView.right - intrinsicWidth
         val deleteIconBottom = deleteIconTop + intrinsicHeight
 
         // Draw the delete icon
         deleteIcon?.setBounds(deleteIconLeft, deleteIconTop, deleteIconRight, deleteIconBottom)
         deleteIcon?.draw(canvas)
 
-        super.onChildDraw(canvas, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
         super.onChildDraw(canvas, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
     }
 
