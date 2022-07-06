@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">NotesTestTask</string>
+
+    <string name="login">Вхід</string>
+    <string name="enter_email">Введіть email</string>
+    <string name="enter_password">Введіть пароль</string>
+    <string name="confirm_password">Введіть пароль ще раз</string>
+    <string name="dont_have_account"><u>В мене немає аккаунту</u></string>
+    <string name="have_account_login">Маю аккаунт. Увійти</string>
+    <string name="enter">Увійти</string>
+    <string name="registration">Реєстрація</string>
+    <string name="error_invalid_email">Адреса електронної пошти має неправильний формат</string>
+    <string name="unknown_error">Сталася помилка: %s</string>
+    <string name="error_invalid_email_or_password">Невірно вказано електронну пошту або пароль</string>
+    <string name="register">Зареєструватися</string>
+    <string name="error_invalid_confirm_password">Паролі не збігаються</string>
+    <string name="error_short_password">Пароль повинен складатися не менше ніж з 6 символів</string>
+    <string name="error_email_is_already_in_use">Адреса електронної пошти вже використовується іншим обліковим записом</string>
+    <string name="add_notes">+ Додати замітку</string>
+    <string name="no_notes">Немає нотаток</string>
+    <string name="note_deleted">Замітка видалена</string>
 </resources>
