@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">NotesTestTask</string>
+    <string name="app_name" translatable="false">NotesTestTask</string>
 
     <string name="login">Вхід</string>
     <string name="enter_email">Введіть email</string>
     <string name="enter_password">Введіть пароль</string>
     <string name="confirm_password">Введіть пароль ще раз</string>
     <string name="dont_have_account"><u>В мене немає аккаунту</u></string>
-    <string name="have_account_login">Маю аккаунт. Увійти</string>
+    <string name="have_account_login"><u>Маю аккаунт. Увійти</u></string>
     <string name="enter">Увійти</string>
     <string name="registration">Реєстрація</string>
     <string name="error_invalid_email">Адреса електронної пошти має неправильний формат</string>
@@ -19,4 +19,8 @@
     <string name="add_notes">+ Додати замітку</string>
     <string name="no_notes">Немає нотаток</string>
     <string name="note_deleted">Замітка видалена</string>
+    <string name="save_note">Зберегти</string>
+    <string name="lorem_ipsum" translatable="false">Існує багато варіацій уривків з Lorem Ipsum, але більшість з них зазнала певних змін на кшталт жартівливих вставок або змішування слів, які навіть не виглядають правдоподібно. Якщо ви збираєтесь використовувати Lorem Ipsum, ви маєте упевнитись в тому, що всередині тексту не приховано нічого, що могло б викликати у читача конфуз. Більшість відомих генераторів Lorem Ipsum в Мережі генерують текст шляхом повторення наперед заданих послідовностей Lorem Ipsum. Принципова відмінність цього генератора робить його першим справжнім генератором Lorem Ipsum. Він використовує словник з більш як 200 слів латини та цілий набір моделей речень - це дозволяє генерувати Lorem Ipsum, який виглядає осмислено. Таким чином, згенерований Lorem Ipsum не міститиме повторів, жартів, нехарактерних для латини слів і т.ін.</string>
+    <string name="choose_image">Оберіть зображення</string>
+    <string name="note_added">Замітка додана</string>
 </resources>

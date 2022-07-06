@@ -19,5 +19,22 @@
         android:id="@+id/notesFragment"
         android:name="com.example.notestesttask.screens.notes.NotesFragment"
         android:label="notes_fragment"
-        tools:layout="@layout/notes_fragment" />
+        tools:layout="@layout/notes_fragment">
+        <action
+            android:id="@+id/action_notesFragment_to_addNoteFragment"
+            app:destination="@id/addNoteFragment"
+            app:popUpTo="@id/notesFragment"
+
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/fade_out"
+
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/slide_out_top"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addNoteFragment"
+        android:name="com.example.notestesttask.screens.add_note.AddNoteFragment"
+        android:label="AddNoteFragment"
+        tools:layout="@layout/add_note_fragment" />
 </navigation>

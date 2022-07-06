@@ -9,14 +9,12 @@ import androidx.navigation.fragment.NavHostFragment
 import com.example.notestesttask.R
 import com.example.notestesttask.base.BaseFragment
 import com.example.notestesttask.base.NotesApp
-import com.example.notestesttask.data.SharedPreferencesManager
 import com.example.notestesttask.databinding.LoginFragmentBinding
 import com.example.notestesttask.util.KeyboardUtil
 import com.google.firebase.auth.FirebaseAuth
 
 class LoginFragment : BaseFragment() {
 
-    private val auth: FirebaseAuth = FirebaseAuth.getInstance()
     private lateinit var binding: LoginFragmentBinding
     private lateinit var viewModel: LoginViewModel
 
@@ -55,7 +53,7 @@ class LoginFragment : BaseFragment() {
     }
 
     private fun initUi() {
-        val currentUser = auth.currentUser
+        val currentUser = FirebaseAuth.getInstance().currentUser
         if (currentUser != null) {
             NotesApp.sharedPreferencesManager.saveUserEmail(currentUser.email)
             goToNotesListFragment()
@@ -84,7 +82,6 @@ class LoginFragment : BaseFragment() {
 
     fun onLoginClick() {
         KeyboardUtil.hideKeyboard(requireActivity())
-
         viewModel.tryToLogin(
             binding.etEmail.text.toString(),
             binding.etPassword.text.toString(),

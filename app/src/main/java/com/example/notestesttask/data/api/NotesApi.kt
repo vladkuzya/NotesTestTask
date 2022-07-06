@@ -16,4 +16,16 @@ interface NotesApi {
         onSuccessListener: (status: Boolean) -> Unit,
         onFailureListener: (exception: Exception) -> Unit
     )
+
+    fun saveNote(
+        email: String,
+        note: Note,
+        onSuccessListener: (status: Boolean) -> Unit,
+        onFailureListener: (exception: Exception) -> Unit
+    )
+
+    fun getImages(
+        onSuccessListener: (images: List<DocumentSnapshot>) -> Unit,
+        onFailureListener: (exception: Exception) -> Unit
+    )
 }
