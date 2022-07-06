@@ -13,6 +13,7 @@ Project is created with:
 * Kotlin
 * Firebase (Firestore, Authentication)
 * MVVM
+* LiveData
 * Glide
 
 ## Setup
